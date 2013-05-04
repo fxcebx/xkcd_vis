@@ -32,10 +32,10 @@ plot(data$size, data$filesize, log='x', main='Filesize vs. Image Size',
      xlab='Image Size (pixels^2)', ylab='filesize (kb)', cex=0.5, col=rgb(0,0,0,0.5))
 
 # Fit log-log and plot
-plo
 plot(log(data$size), log(data$filesize), main='Filesize vs. Image Size', 
      xlab='log Image Size (pixels^2)', ylab='log filesize (kb)', cex=0.4, 
      col=rgb(0,0,0,0.5), ylim=c(0, 8))
+lfs <- lm(log(data$filesize) ~ log(data$size))
 abline(lfs)
 summary(lfs)
 
